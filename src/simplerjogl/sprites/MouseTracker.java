@@ -11,31 +11,31 @@ public abstract class MouseTracker extends Sprite
 {
 	private double screenW, screenH, modelW, modelH;
 
-	public MouseTracker (GL gl, double distance)
+	public MouseTracker (GL2 gl, double distance)
 	{
 		/* default to the origin */
 		this (gl, distance, 0, 0, 0);
 	}
 
-	public MouseTracker (GL gl, double distance, double x, double y, double z)
+	public MouseTracker (GL2 gl, double distance, double x, double y, double z)
 	{
 		/* default SimplerJOGL angle of view */
 		this (gl, distance, 45, x, y, z);
 	}
 
-	public MouseTracker (GL gl, double distance, double angleOfView)
+	public MouseTracker (GL2 gl, double distance, double angleOfView)
 	{
 		/* default to the origin */
 		this (gl, distance, angleOfView, 0, 0, 0);
 	}
 
-	public MouseTracker (GL gl, double distance, double angleOfView, double x, double y, double z)
+	public MouseTracker (GL2 gl, double distance, double angleOfView, double x, double y, double z)
 	{
 		/* default SimplerJOGL screen size */
 		this (gl, distance, angleOfView, x, y, z, 800, 577);
 	}
 
-	public MouseTracker (GL gl, double distance, double angleOfView, double x, double y, double z, int screenW, int screenH)
+	public MouseTracker (GL2 gl, double distance, double angleOfView, double x, double y, double z, int screenW, int screenH)
 	{
 		super (gl, x, y, z);
 		this.screenW = screenW;
@@ -59,7 +59,7 @@ public abstract class MouseTracker extends Sprite
 		modelW = (modelH * this.screenW) / this.screenH;
 	}
 
-	public MouseTracker (GL gl)
+	public MouseTracker (GL2 gl)
 	{
 		super (gl);
 	}

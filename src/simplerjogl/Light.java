@@ -14,7 +14,7 @@ public class Light
 	/**
 	 * The OpenGL drawing context in which this light exists
 	 */
-	protected GL gl;
+	protected GL2 gl;
 	/**
 	 * Next available ID for a light in this SimplerJOGL application
 	 */
@@ -40,7 +40,7 @@ public class Light
 	 * white directional light at (0, 0, 1) with dark gray ambient light
 	 * (OpenGL default)
 	 */
-	public Light (GL gl)
+	public Light (GL2 gl)
 	{
 		this.gl = gl;
 		id = Light.getNextID ();
@@ -79,7 +79,7 @@ public class Light
 	protected static int getNextID ()
 	{
 		nextID++ ;
-		return GL.GL_LIGHT0 + Math.min (7, nextID);
+		return GL2.GL_LIGHT0 + Math.min (7, nextID);
 	}
 
 	/**
@@ -102,20 +102,20 @@ public class Light
 	public void enable ()
 	{
 		/* turn on lighting if necessary */
-		if (!gl.glIsEnabled (GL.GL_LIGHTING))
+		if (!gl.glIsEnabled (GL2.GL_LIGHTING))
 		{
-			gl.glEnable (GL.GL_LIGHTING);
+			gl.glEnable (GL2.GL_LIGHTING);
 		}
 		/* enable this light in particular */
 		gl.glEnable (id);
 		/* apply this light's settings */
-		gl.glLightfv (id, GL.GL_AMBIENT, ambient.getRGBAf (), 0);
-		gl.glLightfv (id, GL.GL_DIFFUSE, diffuse.getRGBAf (), 0);
-		gl.glLightfv (id, GL.GL_SPECULAR, specular.getRGBAf (), 0);
-		gl.glLightfv (id, GL.GL_POSITION, position.getXYZWf (), 0);
-		gl.glLightfv (id, GL.GL_SPOT_DIRECTION, spotDirection.getXYZf (), 0);
-		gl.glLightf (id, GL.GL_SPOT_EXPONENT, (float) spotExponent);
-		gl.glLightf (id, GL.GL_SPOT_CUTOFF, (float) spotCutoff);
+		gl.glLightfv (id, GL2.GL_AMBIENT, ambient.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_DIFFUSE, diffuse.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_SPECULAR, specular.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_POSITION, position.getXYZWf (), 0);
+		gl.glLightfv (id, GL2.GL_SPOT_DIRECTION, spotDirection.getXYZf (), 0);
+		gl.glLightf (id, GL2.GL_SPOT_EXPONENT, (float) spotExponent);
+		gl.glLightf (id, GL2.GL_SPOT_CUTOFF, (float) spotCutoff);
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class Light
 	{
 		Color oldAmb = ambient;
 		ambient = new Color (c);
-		gl.glLightfv (id, GL.GL_AMBIENT, ambient.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_AMBIENT, ambient.getRGBAf (), 0);
 		return oldAmb;
 	}
 
@@ -158,7 +158,7 @@ public class Light
 	{
 		Color oldDiff = diffuse;
 		diffuse = new Color (c);
-		gl.glLightfv (id, GL.GL_DIFFUSE, diffuse.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_DIFFUSE, diffuse.getRGBAf (), 0);
 		return oldDiff;
 	}
 
@@ -180,7 +180,7 @@ public class Light
 	{
 		Color oldSpec = specular;
 		specular = new Color (c);
-		gl.glLightfv (id, GL.GL_SPECULAR, specular.getRGBAf (), 0);
+		gl.glLightfv (id, GL2.GL_SPECULAR, specular.getRGBAf (), 0);
 		return oldSpec;
 	}
 
@@ -201,7 +201,7 @@ public class Light
 	{
 		Vertex oldPos = position;
 		position = new Vertex (v);
-		gl.glLightfv (id, GL.GL_POSITION, position.getXYZWf (), 0);
+		gl.glLightfv (id, GL2.GL_POSITION, position.getXYZWf (), 0);
 		return oldPos;
 	}
 
@@ -220,7 +220,7 @@ public class Light
 	{
 		Vertex oldSpot = spotDirection;
 		spotDirection = new Vertex (v);
-		gl.glLightfv (id, GL.GL_SPOT_DIRECTION, spotDirection.getXYZf (), 0);
+		gl.glLightfv (id, GL2.GL_SPOT_DIRECTION, spotDirection.getXYZf (), 0);
 		return oldSpot;
 	}
 
@@ -231,7 +231,7 @@ public class Light
 	{
 		double oldSpot = this.spotExponent;
 		this.spotExponent = spotExponent;
-		gl.glLightf (id, GL.GL_SPOT_EXPONENT, (float) this.spotExponent);
+		gl.glLightf (id, GL2.GL_SPOT_EXPONENT, (float) this.spotExponent);
 		return oldSpot;
 	}
 
@@ -242,7 +242,7 @@ public class Light
 	{
 		double oldSpot = this.spotCutoff;
 		this.spotCutoff = spotCutoff;
-		gl.glLightf (id, GL.GL_SPOT_CUTOFF, (float) this.spotCutoff);
+		gl.glLightf (id, GL2.GL_SPOT_CUTOFF, (float) this.spotCutoff);
 		return oldSpot;
 	}
 }

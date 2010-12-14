@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.media.opengl.*;
+import javax.media.opengl.awt.*;
+
 import com.sun.opengl.util.*;
 
 /**
@@ -96,7 +98,7 @@ public class Frame
 	 */
 	protected Frame (String title, int width, int height, boolean fullscreen)
 	{
-		glCanvas = new GLCanvas (new GLCapabilities ());
+		glCanvas = new GLCanvas (new GLCapabilities (null));
 		glCanvas.setSize (width, height);
 		this.fullscreen = fullscreen;
 		this.width = width;

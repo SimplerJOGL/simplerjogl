@@ -2,6 +2,7 @@
 package simplerjogl.textures;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 
 import com.sun.opengl.util.texture.TextureCoords;
 
@@ -10,7 +11,7 @@ public class TextureSphere extends TextureModel
 	private double radius;
 	private double divisions;
 
-	public TextureSphere (GL gl, String fileName, double radius, int divisions)
+	public TextureSphere (GL2 gl, String fileName, double radius, int divisions)
 	{
 		super (gl, fileName);
 		this.radius = Math.abs (radius);

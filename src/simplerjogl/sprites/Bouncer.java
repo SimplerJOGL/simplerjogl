@@ -8,12 +8,12 @@ public abstract class Bouncer extends Sprite
 	protected double dx, dy, dz;
 	protected double left, top, front, right, bottom, back;
 
-	public Bouncer (GL gl, double left, double top, double front, double right, double bottom, double back)
+	public Bouncer (GL2 gl, double left, double top, double front, double right, double bottom, double back)
 	{
 		this (gl, 0, 0, 0, Math.random (), Math.random (), Math.random (), left, top, front, right, bottom, back);
 	}
 
-	public Bouncer (GL gl, double x, double y, double z, double dx, double dy, double dz, double left, double top, double front, double right, double bottom, double back)
+	public Bouncer (GL2 gl, double x, double y, double z, double dx, double dy, double dz, double left, double top, double front, double right, double bottom, double back)
 	{
 		super (gl);
 		this.x = Math.max (left, Math.min (x, right));

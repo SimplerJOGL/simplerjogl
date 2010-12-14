@@ -5,15 +5,16 @@ import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
 
 import com.sun.opengl.util.*;
+import com.sun.opengl.util.gl2.*;
 
 public abstract class Model
 {
-	protected GL gl;
+	protected GL2 gl;
 	protected GLU glu;
 	protected GLUT glut;
 	protected Material red, orange, yellow, green, cyan, blue, purple, magenta, white, black;
 
-	public Model (GL gl)
+	public Model (GL2 gl)
 	{
 		this.gl = gl;
 		glu = new GLU ();

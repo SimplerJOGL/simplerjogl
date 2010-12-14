@@ -1,11 +1,23 @@
 
 package simplerjogl;
 
-import javax.media.opengl.*;
-import javax.media.opengl.glu.*;
-import simplerjogl.shell.*;
-import com.sun.opengl.util.*;
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
+import javax.media.opengl.GLAutoDrawable;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.glu.GLU;
+
+import simplerjogl.shell.Shell;
+import simplerjogl.shell.ShellEvent;
+import simplerjogl.shell.ShellListener;
+
+import com.sun.opengl.util.gl2.GLUT;
 
 /**
  * A GLEventListener class -- that is, a class that is capable of drawing
@@ -19,7 +31,7 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	/**
 	 * The current GL drawing context
 	 */
-	protected GL gl;
+	protected GL2 gl;
 	/**
 	 * GLU utilities instance associated with this GL drawing context
 	 */
@@ -44,7 +56,7 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 		/* the specific GL canvas in which we are drawing */
 		if (glDrawable.getGL () != gl)
 		{
-			gl = glDrawable.getGL ();
+			gl = (GL2) glDrawable.getGL ();
 		}
 	}
 
@@ -175,9 +187,9 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	{
 		updateGL (glDrawable);
 		/* enable smooth shading so that our round objects appear round */
-		gl.glShadeModel (GL.GL_SMOOTH);
+		gl.glShadeModel (GL2.GL_SMOOTH);
 		/* make sure that any vectors we define are normal vectors */
-		gl.glEnable (GL.GL_NORMALIZE);
+		gl.glEnable (GL2.GL_NORMALIZE);
 		/* make our background black */
 		gl.glClearColor (0, 0, 0, 0);
 		/* turn on depth testing so that our objects will overlap properly */
@@ -284,7 +296,7 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 		/* fill the canvas with our viewport */
 		gl.glViewport (0, 0, width, height);
 		/* continue to use 3-D projection to calculate our view volume */
-		gl.glMatrixMode (GL.GL_PROJECTION);
+		gl.glMatrixMode (GL2.GL_PROJECTION);
 		gl.glLoadIdentity ();
 		/*
 		 * recalculate our view volume to be a 45 degree angle with a
@@ -293,7 +305,7 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 		 */
 		glu.gluPerspective (45, h, 0.1f, 100);
 		/* we'd like to our transformations to be applied to our model */
-		gl.glMatrixMode (GL.GL_MODELVIEW);
+		gl.glMatrixMode (GL2.GL_MODELVIEW);
 		gl.glLoadIdentity ();
 	}
 
@@ -334,4 +346,11 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 
 	public void commandComplete (ShellEvent e)
 	{}
+
+	@Override
+	public void dispose (GLAutoDrawable arg0)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

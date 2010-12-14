@@ -30,11 +30,11 @@ public class Renderer2D extends Renderer
 	{
 		updateGL (glDrawable);
 		/* continue to use 3-D projection to calculate our view volume */
-		gl.glMatrixMode (GL.GL_PROJECTION);
+		gl.glMatrixMode (GL2.GL_PROJECTION);
 		gl.glLoadIdentity ();
 		gl.glOrtho ((float) width / -2f, (float) width / 2f, (float) height / -2f, (float) height / 2f, 100, -100);
 		/* we'd like to our transformations to be applied to our model */
-		gl.glMatrixMode (GL.GL_MODELVIEW);
+		gl.glMatrixMode (GL2.GL_MODELVIEW);
 		gl.glLoadIdentity ();
 		gl.glTranslatef ((float) width / 2f, (float) height / 2f, 0);
 	}

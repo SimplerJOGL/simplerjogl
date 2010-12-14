@@ -9,12 +9,12 @@ public abstract class Sprite extends Model
 {
 	protected double x, y, z;
 
-	public Sprite (GL gl)
+	public Sprite (GL2 gl)
 	{
 		this (gl, 0, 0, 0);
 	}
 
-	public Sprite (GL gl, double x, double y, double z)
+	public Sprite (GL2 gl, double x, double y, double z)
 	{
 		super (gl);
 		this.x = x;

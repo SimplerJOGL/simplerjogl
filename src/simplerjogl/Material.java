@@ -14,7 +14,7 @@ public class Material
 	/**
 	 * OpenGL drawing context in which this material is used
 	 */
-	protected GL gl;
+	protected GL2 gl;
 	protected Color ambient, diffuse, specular, emission;
 	protected double shininess;
 	protected int face;
@@ -23,7 +23,7 @@ public class Material
 	/**
 	 * Defaults to default OpenGL materials (non-reflective light gray)
 	 */
-	public Material (GL gl)
+	public Material (GL2 gl)
 	{
 		this.gl = gl;
 		setFace (GL.GL_FRONT_AND_BACK);
@@ -57,7 +57,7 @@ public class Material
 	/**
 	 * Construct a material
 	 */
-	public Material (GL gl, Color color)
+	public Material (GL2 gl, Color color)
 	{
 		this (gl);
 		this.diffuse = new Color (color);
@@ -88,11 +88,11 @@ public class Material
 	 */
 	public void useOnFace (int face)
 	{
-		gl.glMaterialfv (face, GL.GL_AMBIENT, ambient.getRGBAf (), 0);
-		gl.glMaterialfv (face, GL.GL_DIFFUSE, diffuse.getRGBAf (), 0);
-		gl.glMaterialfv (face, GL.GL_SPECULAR, specular.getRGBAf (), 0);
-		gl.glMaterialfv (face, GL.GL_EMISSION, emission.getRGBAf (), 0);
-		gl.glMaterialf (face, GL.GL_SHININESS, (float) shininess);
+		gl.glMaterialfv (face, GL2.GL_AMBIENT, ambient.getRGBAf (), 0);
+		gl.glMaterialfv (face, GL2.GL_DIFFUSE, diffuse.getRGBAf (), 0);
+		gl.glMaterialfv (face, GL2.GL_SPECULAR, specular.getRGBAf (), 0);
+		gl.glMaterialfv (face, GL2.GL_EMISSION, emission.getRGBAf (), 0);
+		gl.glMaterialf (face, GL2.GL_SHININESS, (float) shininess);
 		gl.glColor4fv (diffuse.getRGBAf (), 0);
 	}
 

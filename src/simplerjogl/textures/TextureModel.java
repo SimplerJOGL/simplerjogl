@@ -2,6 +2,7 @@
 package simplerjogl.textures;
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 
 import com.sun.opengl.util.texture.Texture;
 
@@ -12,7 +13,7 @@ public class TextureModel extends Model
 {
 	protected Texture texture;
 
-	public TextureModel (GL gl, String fileName)
+	public TextureModel (GL2 gl, String fileName)
 	{
 		super (gl);
 		texture = TextureLoader.load (fileName);

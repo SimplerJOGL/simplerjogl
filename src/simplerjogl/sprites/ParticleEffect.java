@@ -7,7 +7,7 @@ public class ParticleEffect extends Sprite
 {
 	protected Particle particles[];
 
-	public ParticleEffect (GL gl, int numParticles, double left, double top, double front, double right, double bottom, double back)
+	public ParticleEffect (GL2 gl, int numParticles, double left, double top, double front, double right, double bottom, double back)
 	{
 		super (gl);
 		particles = new Particle[numParticles];

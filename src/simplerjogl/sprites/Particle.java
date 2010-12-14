@@ -5,7 +5,7 @@ import javax.media.opengl.*;
 
 public class Particle extends Bouncer
 {
-	public Particle (GL gl, double left, double top, double front, double right, double bottom, double back)
+	public Particle (GL2 gl, double left, double top, double front, double right, double bottom, double back)
 	{
 		super (gl, left, top, front, right, bottom, back);
 		reset ();
