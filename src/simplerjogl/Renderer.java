@@ -54,9 +54,9 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	protected void updateGL (GLAutoDrawable glDrawable)
 	{
 		/* the specific GL canvas in which we are drawing */
-		if (glDrawable.getGL () != gl)
+		if (glDrawable.getGL ().getGL2 () != gl)
 		{
-			gl = (GL2) glDrawable.getGL ();
+			gl = glDrawable.getGL ().getGL2 ();
 		}
 	}
 
@@ -351,6 +351,6 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	public void dispose (GLAutoDrawable arg0)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 }
