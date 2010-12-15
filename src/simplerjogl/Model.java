@@ -4,7 +4,6 @@ package simplerjogl;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
 
-import com.sun.opengl.util.*;
 import com.sun.opengl.util.gl2.*;
 
 public abstract class Model
