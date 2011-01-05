@@ -50,6 +50,9 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	private boolean axes, hashes;
 	private double axisLength;
 	private Material xAxis, yAxis, zAxis, defaultMaterial;
+	
+	public static boolean WINDOWED = false;
+	public static boolean DIALOG = true;
 
 	protected void updateGL (GLAutoDrawable glDrawable)
 	{
