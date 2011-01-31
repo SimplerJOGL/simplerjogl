@@ -3,6 +3,12 @@ package simplerjogl.sprites;
 
 import javax.media.opengl.*;
 
+/**
+ * A Bouncer is a specialized Sprite extension that is, effectively, a mime bouncing ball
+ *
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * @version 2010-01-31
+**/
 public abstract class Bouncer extends Sprite
 {
 	protected double dx, dy, dz;
