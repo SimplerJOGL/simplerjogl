@@ -4,21 +4,79 @@ package simplerjogl.sprites;
 import javax.media.opengl.*;
 
 /**
- * A Bouncer is a specialized Sprite extension that is, effectively, a mime bouncing ball
- *
+ * A Sprite that automatically bounces off of the walls of an invisible box
+ * (feel free to draw a box at those boundaries...)
+ * 
  * @author <a href="mailto:seth@battis.net">Seth Battis</a>
- * @version 2010-01-31
-**/
+ * @version 2011-02-08
+ */
 public abstract class Bouncer extends Sprite
 {
+	/**
+	 * The current velocity of the Bouncer in x-, y- and z-components
+	 */
 	protected double dx, dy, dz;
+
+	/**
+	 * The boundaries within which the Bouncer, er... bounces
+	 */
 	protected double left, top, front, right, bottom, back;
 
+	/**
+	 * Contructor for a Bouncer with a random velocity -- but user-defined
+	 * boundaries, starting at a random point within the boundaries
+	 * 
+	 * @param gl
+	 *            The OpenGL context in which the Bouncer will draw
+	 * @param left
+	 *            The left boundary along the x-axis
+	 * @param top
+	 *            The top boundary along the y-axis
+	 * @param front
+	 *            The front boundary along the z-axis
+	 * @param right
+	 *            The right boundary along the x-axis
+	 * @param bottom
+	 *            The bottom boundary along the y-axis
+	 * @param back
+	 *            The back boundary along the z-axis
+	 */
 	public Bouncer (GL2 gl, double left, double top, double front, double right, double bottom, double back)
 	{
 		this (gl, 0, 0, 0, Math.random (), Math.random (), Math.random (), left, top, front, right, bottom, back);
 	}
 
+	/**
+	 * Constructor for a bouncer with user-defined boundaries, position and
+	 * velocity
+	 * 
+	 * @param gl
+	 *            The drawing context in which the Bouncer is drawn
+	 * @param x
+	 *            The starting x-coordinate of the Bouncer
+	 * @param y
+	 *            The starting y-coordinate of the Bouncer
+	 * @param z
+	 *            The starting z-coordinate of the Bouncer
+	 * @param dx
+	 *            The starting x-velocity of the Bouncer
+	 * @param dy
+	 *            The starting y-velocity of the bouncer
+	 * @param dz
+	 *            The starting z-velocity of the bouncer
+	 * @param left
+	 *            The left boundary along the x-axis
+	 * @param top
+	 *            The top boundary along the y-axis
+	 * @param front
+	 *            The front boundary along the z-axis
+	 * @param right
+	 *            The right boundary along the x-axis
+	 * @param bottom
+	 *            The bottom boundary along the y-axis
+	 * @param back
+	 *            The back boundary along the z-axis
+	 */
 	public Bouncer (GL2 gl, double x, double y, double z, double dx, double dy, double dz, double left, double top, double front, double right, double bottom, double back)
 	{
 		super (gl);
@@ -36,6 +94,12 @@ public abstract class Bouncer extends Sprite
 		this.back = back;
 	}
 
+	/**
+	 * Draws the bouncer at its current position. Note that the bouncer
+	 * updates its location on each OpenGL refresh. One possible extension
+	 * would control the speed of the Bouncer by using a timer to sequence
+	 * the calls to move()
+	 */
 	public void draw ()
 	{
 		move ();
@@ -47,6 +111,9 @@ public abstract class Bouncer extends Sprite
 		gl.glPopMatrix ();
 	}
 
+	/**
+	 * Calculates the next position of the Bouncer in space
+	 */
 	public void move ()
 	{
 		if ( (x <= left) || (x >= right))
