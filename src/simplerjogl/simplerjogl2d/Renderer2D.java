@@ -5,6 +5,16 @@ import javax.media.opengl.*;
 
 import simplerjogl.*;
 
+/**
+ * A Renderer with its viewport and project set up orthographically, for
+ * 2-D drawing. Models that are drawn in the Z = 0 plane will appear in
+ * this renderer.
+ * 
+ * TODO is it only in the Z = 0 plane, or is it Z = 100 to Z = -100?
+ * 
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * @version 2011-02-08
+ */
 public class Renderer2D extends Renderer
 {
 	/**
