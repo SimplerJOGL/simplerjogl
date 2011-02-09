@@ -6,7 +6,7 @@ import javax.media.opengl.*;
 /**
  * A wrapper class for materials
  * 
- * @author Seth Battis
+ * @author <a href="seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
 public class Material
