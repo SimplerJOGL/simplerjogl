@@ -15,7 +15,7 @@ import com.sun.opengl.util.*;
  * href="http://jogl.dev.java.net/">NeHe JOGL Demo Ports< /a>}.
  * 
  * @author Pepijn Van Eeckhoudt
- * @author Seth Battis
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2008-08-06
  */
 public class Frame
