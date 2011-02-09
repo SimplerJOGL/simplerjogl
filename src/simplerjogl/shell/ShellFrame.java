@@ -7,10 +7,22 @@ import javax.swing.JOptionPane;
 
 import simplerjogl.Frame;
 
+/**
+ * A frame that has a shell pane
+ * 
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * @version 2011-02-08
+ */
 public class ShellFrame extends Frame
 {
+	/**
+	 * The shell engine
+	 */
 	protected Shell shell;
 
+	/**
+	 * @return the shell engine object
+	 */
 	public Shell getShell ()
 	{
 		return shell;
@@ -48,6 +60,16 @@ public class ShellFrame extends Frame
 		return new ShellFrame (title, DEFAULT_WIDTH, DEFAULT_HEIGHT, fullscreen);
 	}
 
+	/**
+	 * @param title
+	 *            The title displayed on the window
+	 * @param width
+	 *            The width of the window in pixels
+	 * @param height
+	 *            The height of the window in pixels
+	 * @param fullscreen
+	 *            Is the "window" an actual window or fullscreen?
+	 */
 	protected ShellFrame (String title, int width, int height, boolean fullscreen)
 	{
 		super (title, width, height, fullscreen);
@@ -55,11 +77,25 @@ public class ShellFrame extends Frame
 		addKeyListener (shell);
 	}
 
+	/**
+	 * Add an object to the list of ShellListeners to receive events
+	 * triggered by the Shell
+	 * 
+	 * @param t
+	 *            the object that will be listening
+	 */
 	public void addShellListener (ShellListener t)
 	{
 		shell.addShellListener (t);
 	}
 
+	/**
+	 * Remove an object from the list of ShellListeners that receive events
+	 * triggered by the Shell
+	 * 
+	 * @param t
+	 *            the object to be removed from the list
+	 */
 	public void removeShellListener (ShellListener t)
 	{
 		shell.removeShellListener (t);
