@@ -6,7 +6,7 @@ import javax.media.opengl.*;
 /**
  * A wrapper for OpenGL lights in SimplerJOGL applications
  * 
- * @author Seth Battis
+ * @author <a href="seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
 public class Light
