@@ -5,7 +5,7 @@ package simplerjogl;
  * A class to manage 2D and 3D homogeneous coordinates for SimplerJOGL
  * applications
  * 
- * @author Seth Battis
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
 public class Vertex
