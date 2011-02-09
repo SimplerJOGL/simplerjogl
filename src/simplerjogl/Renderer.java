@@ -23,7 +23,7 @@ import com.sun.opengl.util.gl2.GLUT;
  * A GLEventListener class -- that is, a class that is capable of drawing
  * to a GL context.
  * 
- * @author Seth Battis
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2008-11-13
  */
 public class Renderer implements GLEventListener, KeyListener, MouseListener, MouseMotionListener, ShellListener
@@ -32,28 +32,45 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	 * The current GL drawing context
 	 */
 	protected GL2 gl;
+
 	/**
 	 * GLU utilities instance associated with this GL drawing context
 	 */
 	protected GLU glu = new GLU ();
+
 	/**
 	 * GLUT utilities instance associated with this GL drawing context
 	 */
 	protected GLUT glut = new GLUT ();
+
 	/**
 	 * A reference to a potential terminal pane
 	 */
 	protected Shell shell;
+
 	/**
 	 * Are we showing the x, y and z axes?
 	 */
 	private boolean axes, hashes;
 	private double axisLength;
 	private Material xAxis, yAxis, zAxis, defaultMaterial;
-	
+
+	/**
+	 * Are we opening a window or drawing fullscreen?
+	 */
 	public static boolean WINDOWED = false;
+
+	/**
+	 * Should we ask whether to open in a window or fullscreen?
+	 */
 	public static boolean DIALOG = true;
 
+	/**
+	 * TODO document updateGL -- when is it called and by what?
+	 * 
+	 * @param glDrawable
+	 *            TODO What is this really?
+	 */
 	protected void updateGL (GLAutoDrawable glDrawable)
 	{
 		/* the specific GL canvas in which we are drawing */
@@ -350,10 +367,11 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	public void commandComplete (ShellEvent e)
 	{}
 
-	@Override
 	public void dispose (GLAutoDrawable arg0)
 	{
-		// TODO Auto-generated method stub
-
+		/*
+		 * TODO A critical observer might argue that something should
+		 * probably be disposed in here...
+		 */
 	}
 }
