@@ -13,11 +13,12 @@ import java.util.EventListener;
 public interface ShellListener extends EventListener
 {
 	/**
-	 * TODO I suspect that this should really do something (like, maybe,
-	 * register the shell with the ShellListener?)
-	 * 
 	 * @param t
 	 *            the shell to be registered
+	 */
+	/*
+	 * TODO I suspect that this should really do something (like, maybe,
+	 * register the shell with the ShellListener?)
 	 */
 	public void registerShell (Shell t);
 

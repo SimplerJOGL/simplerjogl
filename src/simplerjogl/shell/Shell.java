@@ -89,8 +89,9 @@ public class Shell implements KeyListener
 	 * @param frame
 	 *            The frame in which the shell's scrolling pane will be
 	 *            added (on the east -- i.e. right -- side)
-	 * 
-	 *            TODO it should be configurable where the shell appears
+	 */
+	/*
+	 * TODO it should be configurable where the shell appears
 	 */
 	public Shell (JFrame frame)
 	{
@@ -102,6 +103,8 @@ public class Shell implements KeyListener
 		isMidRead = false;
 		isMidPrint = false;
 	}
+
+	/* TODO Finish documenting Shell */
 
 	public void addShellListener (ShellListener t)
 	{

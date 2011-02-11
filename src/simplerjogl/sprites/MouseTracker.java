@@ -7,6 +7,7 @@ import javax.media.opengl.*;
  * line of sight must be parallel to Z-axis; up-vector of eye must be
  * parallel to Y-axis; eye must be looking at origin
  */
+/* TODO document MouseTracker */
 public abstract class MouseTracker extends Sprite
 {
 	private double screenW, screenH, modelW, modelH;

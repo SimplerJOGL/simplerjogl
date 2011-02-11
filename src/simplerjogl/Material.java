@@ -9,12 +9,8 @@ import javax.media.opengl.*;
  * @author <a href="seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
-public class Material
+public class Material extends SimplerJOGLObject
 {
-	/**
-	 * OpenGL drawing context in which this material is used
-	 */
-	protected GL2 gl;
 	protected Color ambient, diffuse, specular, emission;
 	protected double shininess;
 	protected int face;
@@ -25,7 +21,7 @@ public class Material
 	 */
 	public Material (GL2 gl)
 	{
-		this.gl = gl;
+		super(gl);
 		setFace (GL.GL_FRONT_AND_BACK);
 		setAmbient (0.2f, 0.2f, 0.2f, 1);
 		setDiffuse (0.8f, 0.8f, 0.8f, 1);
@@ -39,7 +35,7 @@ public class Material
 	 */
 	public Material (Material other)
 	{
-		this.gl = other.gl;
+		super(other);
 		setFace (other.face);
 		setAmbient (other.ambient);
 		setDiffuse (other.diffuse);

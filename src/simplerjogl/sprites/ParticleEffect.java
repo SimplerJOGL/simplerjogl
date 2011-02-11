@@ -3,6 +3,7 @@ package simplerjogl.sprites;
 
 import javax.media.opengl.*;
 
+/* TODO document ParticleEffect */
 public class ParticleEffect extends Sprite
 {
 	protected Particle particles[];

@@ -12,21 +12,18 @@ import com.sun.opengl.util.gl2.*;
  * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2011-02-08
  */
-public abstract class Model
+public abstract class Model extends SimplerJOGLObject
 {
-	/**
-	 * The OpenGL drawing context for this model
-	 */
-	protected GL2 gl;
-
 	/**
 	 * GLU utility calls are supported within this model
 	 */
+	/* FIXME this should really be static */
 	protected GLU glu;
 
 	/**
 	 * GLUT utility toolbox calls are supported within this model
 	 */
+	 /* FIXME this should really be static */
 	protected GLUT glut;
 
 	/**
@@ -43,8 +40,9 @@ public abstract class Model
 	 */
 	public Model (GL2 gl)
 	{
-		this.gl = gl;
-
+		super(gl);
+		
+		/* FIXME this is a memory-hog maneuver -- these should be static */
 		glu = new GLU ();
 		glut = new GLUT ();
 
@@ -87,7 +85,9 @@ public abstract class Model
 	 */
 	public Model (Model other)
 	{
-		this.gl = other.gl;
+		super(other);
+		
+		/* FIXME these should be static */
 		this.glu = other.glu;
 		this.glut = other.glut;
 

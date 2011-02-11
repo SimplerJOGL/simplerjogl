@@ -24,7 +24,8 @@ public class Light
 	 * {@link simplerjogl.Light#gl "GL canvas"}, in the range (0-7). All
 	 * lights after the 7th light will be given ID=7
 	 * 
-	 * @see <a * href="http://www.falloutsoftware.com/tutorials/gl/gl8.htm#defining_a_light_source"
+	 * @see <a * href=
+	 *      "http://www.falloutsoftware.com/tutorials/gl/gl8.htm#defining_a_light_source"
 	 *      >Defining * an OpenGL Light< /a>
 	 * @see <a * href=
 	 *      "http://www.opengl.org/resources/faq/technical/lights.htm#ligh0070"
@@ -73,7 +74,9 @@ public class Light
 	}
 
 	/**
-	 * @return next available light ID in this SimplerJOGL app
+	 * @return next available light ID in this SimplerJOGL app (nota bene:
+	 *         there can be no more than 8 lights in an OpenGL context, a
+	 *         9th or greater light definition will override the 8th light
 	 * @see #id
 	 */
 	protected static int getNextID ()
@@ -116,6 +119,15 @@ public class Light
 		gl.glLightfv (id, GL2.GL_SPOT_DIRECTION, spotDirection.getXYZf (), 0);
 		gl.glLightf (id, GL2.GL_SPOT_EXPONENT, (float) spotExponent);
 		gl.glLightf (id, GL2.GL_SPOT_CUTOFF, (float) spotCutoff);
+	}
+
+	/**
+	 * Disable this light
+	 */
+	public void disable ()
+	{
+		/* disable this light in particular */
+		gl.glDisable (id);
 	}
 
 	/**

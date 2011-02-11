@@ -6,6 +6,7 @@ import javax.media.opengl.GL2;
 
 import com.sun.opengl.util.texture.TextureCoords;
 
+/* TODO document TextureSphere */
 public class TextureSphere extends TextureModel
 {
 	private double radius;

@@ -26,21 +26,18 @@ import com.sun.opengl.util.gl2.GLUT;
  * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2008-11-13
  */
-public class Renderer implements GLEventListener, KeyListener, MouseListener, MouseMotionListener, ShellListener
+public class Renderer extends SimplerJOGLObject implements GLEventListener, KeyListener, MouseListener, MouseMotionListener, ShellListener
 {
-	/**
-	 * The current GL drawing context
-	 */
-	protected GL2 gl;
-
 	/**
 	 * GLU utilities instance associated with this GL drawing context
 	 */
+	/* FIXME this should be passed to Model to use statically */
 	protected GLU glu = new GLU ();
 
 	/**
 	 * GLUT utilities instance associated with this GL drawing context
 	 */
+	/* FIXME this should be passed to Model to use statically */
 	protected GLUT glut = new GLUT ();
 
 	/**
@@ -65,18 +62,16 @@ public class Renderer implements GLEventListener, KeyListener, MouseListener, Mo
 	 */
 	public static boolean DIALOG = true;
 
-	/**
-	 * TODO document updateGL -- when is it called and by what?
-	 * 
+	/** 
 	 * @param glDrawable
-	 *            TODO What is this really?
 	 */
+	/* TODO document updateGL -- when is it called and by what? */
 	protected void updateGL (GLAutoDrawable glDrawable)
 	{
 		/* the specific GL canvas in which we are drawing */
-		if (glDrawable.getGL ().getGL2 () != gl)
+		if (glDrawable.getGL ().getGL2 () != getGL())
 		{
-			gl = glDrawable.getGL ().getGL2 ();
+			setGL(glDrawable.getGL ().getGL2 ());
 		}
 	}
 

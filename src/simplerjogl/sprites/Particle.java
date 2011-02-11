@@ -3,6 +3,7 @@ package simplerjogl.sprites;
 
 import javax.media.opengl.*;
 
+/* TODO document Particle */
 public class Particle extends Bouncer
 {
 	public Particle (GL2 gl, double left, double top, double front, double right, double bottom, double back)

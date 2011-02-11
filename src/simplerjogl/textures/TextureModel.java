@@ -9,6 +9,7 @@ import com.sun.opengl.util.texture.Texture;
 import simplerjogl.Model;
 import simplerjogl.TextureLoader;
 
+/* TODO document TextureModel */
 public class TextureModel extends Model
 {
 	protected Texture texture;

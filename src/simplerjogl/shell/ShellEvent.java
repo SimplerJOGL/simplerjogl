@@ -19,7 +19,8 @@ public class ShellEvent extends EventObject
 
 	/**
 	 * The command parameters (nouns, each a single word)
-	 * 
+	 */
+	/*
 	 * TODO would an ArrayList or Vector be more efficient than an array?
 	 */
 	protected String[] parameters;
@@ -106,8 +107,9 @@ public class ShellEvent extends EventObject
 	 * 
 	 * @param s
 	 *            the new command verb (should be a single word)
-	 * 
-	 *            TODO should confirm that command verb is a single word
+	 */
+	/*
+	 * TODO should confirm that command verb is a single word
 	 */
 	public void setCommand (String s)
 	{
@@ -119,8 +121,9 @@ public class ShellEvent extends EventObject
 	 * 
 	 * @param a
 	 *            the array of nouns
-	 * 
-	 *            TODO should confirm that each noun is a single word
+	 */
+	/*
+	 * TODO should confirm that each noun is a single word
 	 */
 	public void setParameters (String[] a)
 	{
@@ -134,8 +137,9 @@ public class ShellEvent extends EventObject
 	 * 
 	 * @param s
 	 *            the additional parameter noun
-	 * 
-	 *            TODO confirm that the parameter noun is a single word
+	 */
+	/*
+	 * TODO confirm that the parameter noun is a single word
 	 */
 	public void addParameter (String s)
 	{
