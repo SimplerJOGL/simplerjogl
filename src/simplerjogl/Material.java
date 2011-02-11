@@ -20,7 +20,7 @@ public class Material extends SimplerJOGLObject
 	/**
 	 * Defaults to default OpenGL materials (non-reflective light gray)
 	 */
-	public Material (GL2 gl)
+	public Material (GL gl)
 	{
 		super(gl);
 		setFace (GL.GL_FRONT_AND_BACK);
@@ -54,7 +54,7 @@ public class Material extends SimplerJOGLObject
 	/**
 	 * Construct a material
 	 */
-	public Material (GL2 gl, Color color)
+	public Material (GL gl, Color color)
 	{
 		this (gl);
 		this.diffuse = new Color (color);

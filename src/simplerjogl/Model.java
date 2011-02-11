@@ -23,7 +23,7 @@ public abstract class Model extends SimplerJOGLObject
 	/**
 	 * GLUT utility toolbox calls are supported within this model
 	 */
-	 /* FIXME this should really be static */
+	/* FIXME this should really be static */
 	protected GLUT glut;
 
 	/**
@@ -32,6 +32,7 @@ public abstract class Model extends SimplerJOGLObject
 	 */
 	/* FIXME these should be static and defined in Material */
 	protected Material red, orange, yellow, green, cyan, blue, purple, magenta, white, black;
+	protected Material transparentRed, transparentOrange, transparentYellow, transparentGreen, transparentCyan, transparentBlue, transparentPurple, transparentMagenta, transparentWhite, transparentBlack;
 
 	/**
 	 * Default constructor
@@ -39,10 +40,10 @@ public abstract class Model extends SimplerJOGLObject
 	 * @param gl
 	 *            OpenGL drawing context for the model
 	 */
-	public Model (GL2 gl)
+	public Model (GL gl)
 	{
-		super(gl);
-		
+		super (gl);
+
 		/* FIXME this is a memory-hog maneuver -- these should be static */
 		glu = new GLU ();
 		glut = new GLUT ();
@@ -50,32 +51,62 @@ public abstract class Model extends SimplerJOGLObject
 		red = new Material (gl);
 		red.setDiffuse (1, 0, 0, 1);
 
+		transparentRed = new Material (gl);
+		transparentRed.setDiffuse (1, 0, 0, 0.5);
+
 		orange = new Material (gl);
 		orange.setDiffuse (1, 0.5f, 0, 1);
+
+		transparentOrange = new Material (gl);
+		transparentOrange.setDiffuse (1, 0.5f, 0, 0.5);
 
 		yellow = new Material (gl);
 		yellow.setDiffuse (1, 1, 0, 1);
 
+		transparentYellow = new Material (gl);
+		transparentYellow.setDiffuse (1, 1, 0, 0.5);
+
 		green = new Material (gl);
 		green.setDiffuse (0, 1, 0, 1);
+
+		transparentGreen = new Material (gl);
+		transparentGreen.setDiffuse (0, 1, 0, 0.5);
 
 		cyan = new Material (gl);
 		cyan.setDiffuse (0, 1, 1, 1);
 
+		transparentCyan = new Material (gl);
+		transparentCyan.setDiffuse (0, 1, 1, 0.5);
+
 		blue = new Material (gl);
 		blue.setDiffuse (0, 0, 1, 1);
+
+		transparentBlue = new Material (gl);
+		transparentBlue.setDiffuse (0, 0, 1, 0.5);
 
 		purple = new Material (gl);
 		purple.setDiffuse (1, 0, 0.5f, 1);
 
+		transparentPurple = new Material (gl);
+		transparentPurple.setDiffuse (1, 0, 0.5, 0.5);
+
 		magenta = new Material (gl);
 		magenta.setDiffuse (1, 0, 1, 1);
+
+		transparentMagenta = new Material (gl);
+		transparentMagenta.setDiffuse (1, 0, 1, 0.5);
 
 		white = new Material (gl);
 		white.setDiffuse (1, 1, 1, 1);
 
+		transparentWhite = new Material (gl);
+		transparentWhite.setDiffuse (1, 1, 1, 0.5);
+
 		black = new Material (gl);
 		black.setDiffuse (0, 0, 0, 1);
+
+		transparentBlack = new Material (gl);
+		transparentBlack.setDiffuse (0, 0, 0, 0.5);
 	}
 
 	/**
@@ -86,8 +117,8 @@ public abstract class Model extends SimplerJOGLObject
 	 */
 	public Model (Model other)
 	{
-		super(other);
-		
+		super (other);
+
 		/* FIXME these should be static */
 		this.glu = other.glu;
 		this.glut = other.glut;

@@ -1,6 +1,7 @@
 
 package simplerjogl;
 
+import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
 
 public class SimplerJOGLObject
@@ -14,7 +15,7 @@ public class SimplerJOGLObject
 	 * @param gl
 	 *            OpenGL drawing context for this object
 	 */
-	public SimplerJOGLObject (GL2 gl)
+	public SimplerJOGLObject (GL gl)
 	{
 		setGL(gl);
 	}
@@ -29,17 +30,17 @@ public class SimplerJOGLObject
 	 *            new OpenGL drawing context
 	 * @return old OpenGL drawing context
 	 */
-	public GL2 setGL (GL2 gl)
+	public GL2 setGL (GL gl)
 	{
 		GL2 oldGl = this.gl;
-		this.gl = gl;
+		this.gl = (GL2) gl;
 		return oldGl;
 	}
 
 	/**
 	 * @return current OpenGL drawing context
 	 */
-	public GL2 getGL ()
+	public GL getGL ()
 	{
 		return gl;
 	}
