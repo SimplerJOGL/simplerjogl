@@ -21,7 +21,7 @@ public abstract class Sprite extends Model
 	 * The default constructor
 	 * @param gl the OpenGL drawing context in which this sprite exists
 	 */
-	public Sprite (GL2 gl)
+	public Sprite (GL gl)
 	{
 		this (gl, 0, 0, 0);
 	}
@@ -33,7 +33,7 @@ public abstract class Sprite extends Model
 	 * @param y y-coordinate
 	 * @param z z-coordinate
 	 */
-	public Sprite (GL2 gl, double x, double y, double z)
+	public Sprite (GL gl, double x, double y, double z)
 	{
 		super (gl);
 		this.x = x;
