@@ -9,6 +9,7 @@ import javax.media.opengl.*;
  * @author <a href="seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
+/* TODO statically define some materials based on static Colors? */
 public class Material extends SimplerJOGLObject
 {
 	protected Color ambient, diffuse, specular, emission;

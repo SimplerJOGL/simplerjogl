@@ -7,6 +7,7 @@ package simplerjogl;
  * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * @version 2009-01-07
  */
+/* TODO statically define some colors? */
 public class Color
 {
 	/**

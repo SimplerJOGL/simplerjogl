@@ -30,6 +30,7 @@ public abstract class Model extends SimplerJOGLObject
 	 * A number of default materials of generic colors are supported within
 	 * this model
 	 */
+	/* FIXME these should be static and defined in Material */
 	protected Material red, orange, yellow, green, cyan, blue, purple, magenta, white, black;
 
 	/**
