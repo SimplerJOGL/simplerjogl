@@ -62,16 +62,21 @@ public class Renderer extends SimplerJOGLObject implements GLEventListener, KeyL
 	 */
 	public static boolean DIALOG = true;
 
-	/** 
+	/**
 	 * @param glDrawable
 	 */
 	/* TODO document updateGL -- when is it called and by what? */
 	protected void updateGL (GLAutoDrawable glDrawable)
 	{
+		/*
+		 * FIXME need to make sure that we're getting the correct
+		 * capabilities to prevent screen flicker
+		 */
+
 		/* the specific GL canvas in which we are drawing */
-		if (glDrawable.getGL ().getGL2 () != getGL())
+		if (glDrawable.getGL ().getGL2 () != getGL ())
 		{
-			setGL(glDrawable.getGL ().getGL2 ());
+			setGL (glDrawable.getGL ().getGL2 ());
 		}
 	}
 
