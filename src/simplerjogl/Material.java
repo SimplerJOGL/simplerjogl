@@ -45,12 +45,6 @@ public class Material extends SimplerJOGLObject
 		setShininess (other.shininess);
 	}
 
-	public static void enableBlending (GL gl)
-	{
-		gl.glEnable (GL.GL_BLEND);
-		gl.glBlendFunc (GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
-	}
-
 	/**
 	 * Construct a material
 	 */

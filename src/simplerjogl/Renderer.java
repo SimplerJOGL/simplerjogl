@@ -215,6 +215,11 @@ public class Renderer extends SimplerJOGLObject implements GLEventListener, KeyL
 		/* turn on depth testing so that our objects will overlap properly */
 		gl.glEnable (GL.GL_DEPTH_TEST);
 		/* create a dummy material to set color/material values by default */
+		
+		/* enable transparency */
+		gl.glEnable (GL.GL_BLEND);
+		gl.glBlendFunc (GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+
 		defaultMaterial = new Material (gl);
 		axes = false;
 		hashes = true;
