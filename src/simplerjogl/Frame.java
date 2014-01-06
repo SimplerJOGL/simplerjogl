@@ -7,7 +7,7 @@ import java.awt.event.*;
 import javax.media.opengl.*;
 import javax.media.opengl.awt.*;
 
-import com.sun.opengl.util.*;
+import com.jogamp.opengl.util.*;
 
 /**
  * A class to display a Swing window containing an OpenGL canvas, based
@@ -113,7 +113,7 @@ public class Frame
 		frame.getContentPane ().add (glCanvas, BorderLayout.CENTER);
 		/* we'd like to aim for 60fps, when possible */
 		animator = new FPSAnimator (glCanvas, 60);
-		animator.setRunAsFastAsPossible (false);
+		// animator.setRunAsFastAsPossible (false);
 	}
 
 	/**

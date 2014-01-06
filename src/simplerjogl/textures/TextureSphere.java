@@ -4,7 +4,7 @@ package simplerjogl.textures;
 import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
 
-import com.sun.opengl.util.texture.TextureCoords;
+import com.jogamp.opengl.util.texture.TextureCoords;
 
 /* TODO document TextureSphere */
 public class TextureSphere extends TextureModel

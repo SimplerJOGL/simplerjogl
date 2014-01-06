@@ -17,7 +17,7 @@ import simplerjogl.shell.Shell;
 import simplerjogl.shell.ShellEvent;
 import simplerjogl.shell.ShellListener;
 
-import com.sun.opengl.util.gl2.GLUT;
+import com.jogamp.opengl.util.gl2.GLUT;
 
 /**
  * A GLEventListener class -- that is, a class that is capable of drawing

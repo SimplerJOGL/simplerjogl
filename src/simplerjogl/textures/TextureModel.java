@@ -4,7 +4,7 @@ package simplerjogl.textures;
 import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
 
-import com.sun.opengl.util.texture.Texture;
+import com.jogamp.opengl.util.texture.Texture;
 
 import simplerjogl.Model;
 import simplerjogl.TextureLoader;
@@ -13,11 +13,13 @@ import simplerjogl.TextureLoader;
 public class TextureModel extends Model
 {
 	protected Texture texture;
-
+	protected GL2 gl;
+	
 	public TextureModel (GL2 gl, String fileName)
 	{
 		super (gl);
-		texture = TextureLoader.load (fileName);
+		this.gl = gl;
+		texture = TextureLoader.load (gl, fileName);
 		if (texture != null && !gl.glIsEnabled (GL.GL_TEXTURE_2D))
 		{
 			gl.glEnable (GL.GL_TEXTURE_2D);
@@ -33,7 +35,7 @@ public class TextureModel extends Model
 	{
 		if (texture != null)
 		{
-			texture.bind ();
+			texture.bind (gl);
 		}
 	}
 }

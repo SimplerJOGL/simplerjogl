@@ -4,7 +4,7 @@ package simplerjogl;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
 
-import com.sun.opengl.util.gl2.*;
+import com.jogamp.opengl.util.gl2.*;
 
 /**
  * A container class for model descriptions

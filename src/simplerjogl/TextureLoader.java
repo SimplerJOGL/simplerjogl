@@ -2,7 +2,7 @@
 package simplerjogl;
 
 import javax.media.opengl.*;
-import com.sun.opengl.util.texture.*;
+import com.jogamp.opengl.util.texture.*;
 import java.io.*;
 
 /**
@@ -21,18 +21,19 @@ public class TextureLoader
 	 * Texture loader utilizes JOGL's provided utilities to produce a
 	 * texture.
 	 * 
+	 * @param gl The OpenGL context into which to load the texture
 	 * @param fileName
 	 *            relative filename from execution point
 	 * @return a texture bound to the OpenGL context
 	 */
-	public static Texture load (String fileName)
+	public static Texture load (GL2 gl, String fileName)
 	{
 		Texture texture = null;
 		try
 		{
 			texture = TextureIO.newTexture (new File (fileName), false);
-			texture.setTexParameteri (GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
-			texture.setTexParameteri (GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
+			texture.setTexParameteri (gl, GL.GL_TEXTURE_MAG_FILTER, GL.GL_NEAREST);
+			texture.setTexParameteri (gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
 		}
 		catch (Exception e)
 		{
