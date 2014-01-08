@@ -1,7 +1,6 @@
 # Java & Javadocs #
 *.class
-/bin
-/doc
+*/doc/*
 
 # Package Files #
 *.jar
