@@ -146,4 +146,20 @@ public abstract class Model extends SimplerJOGLObject
 	 * called whenever the OpenGL drawing context is refreshed.
 	 */
 	public abstract void draw ();
+	
+	public void wireframe() {
+		draw(true);
+	}
+
+	/**
+	 * Any object that extends Model can, alternatively override this draw
+	 * method to make the OpenGL calls necessary to draw the model. This
+	 * of the method should use the wireframe parameter to choose between
+	 * solid or wireframe OpenGL calls. If an object overrides this method,
+	 * the draw() method contain single call to draw(false).
+	 * @param wireframe Whether or not to draw the model as a wireframe or solid
+	 */
+	public void draw(boolean wireframe) {
+		draw();
+	}
 }

@@ -134,4 +134,20 @@ public abstract class Sprite extends Model
 	 * the origin.
 	 */
 	public abstract void spriteDraw ();
+	
+	public void spriteWireframe() {
+		spriteDraw(true);
+	}
+	
+	/**
+	 * Any object that extends Sprite can, alternatively override this spriteDraw()
+	 * method to make the OpenGL calls necessary to draw the sprite. This
+	 * of the method should use the wireframe parameter to choose between
+	 * solid or wireframe OpenGL calls. If an object overrides this method,
+	 * the spriteDraw() method contain single call to spriteDraw(false).
+	 * @param wireframe Whether or not to draw the sprite as a wireframe or solid
+	 */
+	public void spriteDraw(boolean wireframe) {
+		spriteDraw();
+	}
 }
