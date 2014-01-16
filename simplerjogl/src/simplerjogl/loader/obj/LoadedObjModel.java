@@ -33,13 +33,15 @@ public class LoadedObjModel extends LoadedModel {
 		}
 	}
 
-	@Override
-	public void draw() {
+	public void draw(boolean wireframe) {
 		Iterator<Face> i = faces.iterator();
 		while (i.hasNext()) {
 			Face f = i.next();
-			f.draw();
+			f.draw(wireframe);
 		}
 	}
 
+	public void draw() {
+		draw(false);
+	}
 }

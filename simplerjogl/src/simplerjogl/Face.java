@@ -42,13 +42,17 @@ public class Face extends SimplerJOGLObject {
 		}
 	}
 
-	public void draw() {
-		if (vertices.size() == 3) {
-			gl.glBegin(GL2.GL_TRIANGLES);
-		} else if (vertices.size() == 4) {
-			gl.glBegin(GL2.GL_QUADS);
+	public void draw(boolean wireframe) {
+		if (wireframe) {
+			gl.glBegin(GL.GL_LINE_LOOP);
 		} else {
-			gl.glBegin(GL2.GL_POLYGON);
+			if (vertices.size() == 3) {
+				gl.glBegin(GL2.GL_TRIANGLES);
+			} else if (vertices.size() == 4) {
+				gl.glBegin(GL2.GL_QUADS);
+			} else {
+				gl.glBegin(GL2.GL_POLYGON);
+			}
 		}
 
 		Iterator<Vertex> i = vertices.iterator();
@@ -60,4 +64,7 @@ public class Face extends SimplerJOGLObject {
 		gl.glEnd();
 	}
 
+	public void draw() {
+		draw(false);
+	}
 }
