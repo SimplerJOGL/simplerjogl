@@ -33,14 +33,22 @@ public class Particle extends Bouncer
 		z += dz;
 	}
 
-	public void spriteDraw ()
+	public void spriteDraw (boolean wireframe)
 	{
-		gl.glBegin (GL.GL_TRIANGLES);
-		{
-			gl.glVertex3d (-.05, 0, 0);
-			gl.glVertex3d (0, -.1, 0);
-			gl.glVertex3d (.05, 0, 0);
+		if (wireframe) {
+			gl.glBegin(GL.GL_LINE_LOOP);
+		} else {
+			gl.glBegin (GL.GL_TRIANGLES);
 		}
+		
+		gl.glVertex3d (-.05, 0, 0);
+		gl.glVertex3d (0, -.1, 0);
+		gl.glVertex3d (.05, 0, 0);
+
 		gl.glEnd ();
+	}
+	
+	public void spriteDraw() {
+		spriteDraw(false);
 	}
 }

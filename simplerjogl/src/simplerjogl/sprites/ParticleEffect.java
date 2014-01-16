@@ -26,17 +26,25 @@ public class ParticleEffect extends Sprite
 		}
 	}
 
-	public void draw ()
+	public void draw (boolean wireframe)
 	{
-		super.draw ();
+		super.draw (wireframe);
 		move ();
 	}
+	
+	public void draw() {
+		draw(false);
+	}
 
-	public void spriteDraw ()
+	public void spriteDraw (boolean wireframe)
 	{
 		for (int i = 0; i < particles.length; i++ )
 		{
-			particles[i].draw ();
+			particles[i].draw (wireframe);
 		}
+	}
+	
+	public void spriteDraw() {
+		spriteDraw(false);
 	}
 }

@@ -65,14 +65,18 @@ public abstract class MouseTracker extends Sprite
 		super (gl);
 	}
 
-	public void draw ()
+	public void draw (boolean wireframe)
 	{
 		gl.glPushMatrix ();
 		{
 			gl.glTranslated (x, y, z);
-			spriteDraw ();
+			spriteDraw (wireframe);
 		}
 		gl.glPopMatrix ();
+	}
+	
+	public void draw() {
+		draw(false);
 	}
 
 	public void move ()

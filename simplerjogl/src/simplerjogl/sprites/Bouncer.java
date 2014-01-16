@@ -99,16 +99,27 @@ public abstract class Bouncer extends Sprite
 	 * updates its location on each OpenGL refresh. One possible extension
 	 * would control the speed of the Bouncer by using a timer to sequence
 	 * the calls to move()
+	 * @param wireframe Whether or not to draw the Bouncer as a wireframe
 	 */
-	public void draw ()
+	public void draw (boolean wireframe)
 	{
 		move ();
 		gl.glPushMatrix ();
 		{
 			gl.glTranslated (x, y, z);
-			spriteDraw ();
+			spriteDraw (wireframe);
 		}
 		gl.glPopMatrix ();
+	}
+	
+	/**
+	 * Draws the bouncer at its current position. Note that the bouncer
+	 * updates its location on each OpenGL refresh. One possible extension
+	 * would control the speed of the Bouncer by using a timer to sequence
+	 * the calls to move()
+	 */
+	public void draw() {
+		draw(false);
 	}
 
 	/**
