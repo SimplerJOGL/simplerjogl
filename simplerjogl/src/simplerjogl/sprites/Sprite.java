@@ -45,14 +45,18 @@ public abstract class Sprite extends Model
 	 * This method overrides the basic Model.draw() method, drawing the sprite
 	 * at (or, at least, relative to) its (x, y, z) center point.
 	 */
-	public void draw ()
+	public void draw (boolean wireframe)
 	{
 		gl.glPushMatrix();
 		{
 			gl.glTranslated (x, y, z);
-			spriteDraw ();
+			spriteDraw (wireframe);
 		}
 		gl.glPopMatrix();
+	}
+	
+	public void draw() {
+		draw(false);
 	}
 
 	/**

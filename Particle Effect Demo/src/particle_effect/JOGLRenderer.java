@@ -7,6 +7,7 @@ public class JOGLRenderer extends Renderer
 {
 	private Rain shower;
 	private Light l;
+	private int rot = 0;
 
 	public void init ()
 	{
@@ -17,10 +18,7 @@ public class JOGLRenderer extends Renderer
 
 	public void display ()
 	{
-		glu.gluLookAt (0, 0, 20, 0, 0, 0, 0, 1, 0);
+		glu.gluLookAt (0, 0, 10, 0, 0, 0, 0, 1, 0);
 		shower.draw ();
-		gl.glTranslated (0, 5, 0);
-		gl.glRotated (90, 1, 0, 0);
-		glut.glutSolidCylinder (2, 10, 100, 2);
 	}
 }
