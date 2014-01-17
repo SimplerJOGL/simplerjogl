@@ -1,7 +1,6 @@
 package simplerjogl;
 
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * A class to manage 2D and 3D homogeneous coordinates for SimplerJOGL

@@ -1,7 +1,6 @@
 package objloader;
 
 import java.io.*;
-import javax.media.opengl.*;
 import simplerjogl.*;
 import simplerjogl.loader.LoadedModel;
 import simplerjogl.loader.obj.*;
