@@ -1,31 +1,39 @@
 package objloader;
 
-import java.io.IOException;
-
-import javax.media.opengl.GLArrayData;
+import java.io.*;
+import javax.media.opengl.*;
 import simplerjogl.*;
+import simplerjogl.loader.LoadedModel;
 import simplerjogl.loader.obj.*;
 
-public class JOGLRenderer extends Renderer
-{
-	private LoadedObjModel suzanne;
-	private float rot;
-	
-	public void init ()
-	{
+public class JOGLRenderer extends Renderer {
+
+	/* a model that will be loaded from a Wavefront OBJ file */
+	private LoadedModel suzanne;
+
+	private int degreesOfRotation;
+	private Light basicLight;
+
+	public void init() {
+		/*
+		 * load the OBJ file from the model directory as a model. Note that,
+		 * since we are dealing with file I/O, IOExceptions may be thrown so we
+		 * either need to throw them ourselves or catch them.
+		 */
 		try {
-			suzanne = (LoadedObjModel) new ObjLoader(gl).load("model/suzanne.obj");
+			suzanne = new ObjLoader(gl).load("model/suzanne.obj");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		rot = 0;
+		degreesOfRotation = 0;
+		basicLight = new Light(gl);
+		basicLight.enable();
 	}
 
-	public void display ()
-	{
-		glu.gluLookAt (0, 0, 5, 0, 0, 0, 0, 1, 0);
-		gl.glRotatef(rot++, 0, 1, 0);
-		suzanne.wireframe();
+	public void display() {
+		glu.gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+		gl.glRotatef(degreesOfRotation++, 0, 1, 0);
+		suzanne.draw();
 	}
 }
