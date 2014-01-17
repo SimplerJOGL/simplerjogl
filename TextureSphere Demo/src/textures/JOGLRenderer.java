@@ -14,7 +14,7 @@ public class JOGLRenderer extends Renderer
 	public void init ()
 	{
 		sun = new TextureSphere (gl, "images/SunTexture_2048.PNG", 1, 100);
-		//Material.enableBlending (gl);
+		Material.enableBlending (gl);
 		glow = new Material (gl);
 		glow.setEmission (1, .9, 0, 1);
 		ray = new Material (gl);
