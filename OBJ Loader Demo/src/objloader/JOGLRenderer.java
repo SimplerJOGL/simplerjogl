@@ -6,6 +6,13 @@ import simplerjogl.*;
 import simplerjogl.loader.LoadedModel;
 import simplerjogl.loader.obj.*;
 
+/**
+ * Demonstrate the use of an OBJ Loader to import Wavefront OBJ files into
+ * SimplerJOGL.
+ * 
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * 
+ */
 public class JOGLRenderer extends Renderer {
 
 	/* a model that will be loaded from a Wavefront OBJ file */

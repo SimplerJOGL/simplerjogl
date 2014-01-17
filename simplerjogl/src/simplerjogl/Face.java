@@ -9,7 +9,7 @@ import javax.media.opengl.*;
  * defined by the vertices in counter-clockwise (right-hand rule) order as they
  * are added to the face.
  * 
- * @author Seth Battis <seth@battis.net>
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
  * 
  */
 public class Face extends SimplerJOGLObject {

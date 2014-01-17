@@ -8,16 +8,33 @@ import javax.media.opengl.*;
 import simplerjogl.*;
 import simplerjogl.loader.*;
 
+/**
+ * Load a Wavefront OBJ file into a SimplerJOGL model.
+ * 
+ * @see http://en.wikipedia.org/wiki/Wavefront_.obj_file
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * 
+ */
 public class ObjLoader extends Loader {
 	public ObjLoader(GL gl) {
 		super(gl);
 	}
 
-	private static final String FACE = "f";
-	private static final String VERTEX = "v";
+	public static final String DEFN_FACE = "f";
+	public static final String DEFN_VERTEX = "v";
+	public static final String DEFN_TEXTURE = "vt";
+	public static final String DEFN_NORMAL = "vn";
+	public static final String DEFN_PARAMETER_SPACE = "vp";
+	public static final String DEFN_SMOOTHING = "s";
 
-	@Override
-	public LoadedModel load(Reader r) throws IOException {
+	/**
+	 * Load a Wavefront OBJ file from a character stream (probably a file, but
+	 * who knows).
+	 * 
+	 * @param r
+	 * @throws IOException
+	 */
+	public LoadedObjModel load(Reader r) throws IOException {
 		BufferedReader reader = new BufferedReader(r);
 		String line = null;
 		int readerLineNumber = 0;
@@ -65,7 +82,7 @@ public class ObjLoader extends Loader {
 	 *         returned to maintain the face index counter.
 	 */
 	private static Face parseFace(GL gl, Definition d, List<Vertex> vertices) {
-		if (!d.getType().equals(ObjLoader.FACE)) {
+		if (!d.getType().equals(ObjLoader.DEFN_FACE)) {
 			/* invalid: should start with "f" */
 			return new Face(gl);
 		} else {
@@ -91,7 +108,7 @@ public class ObjLoader extends Loader {
 	 *         origin) is returned to maintain the vertex index counter
 	 */
 	private static Vertex parseVertex(Definition d) {
-		if (!d.getType().equals(ObjLoader.VERTEX)) {
+		if (!d.getType().equals(ObjLoader.DEFN_VERTEX)) {
 			/* invalid: should start with "v" */
 			return new Vertex();
 		} else {

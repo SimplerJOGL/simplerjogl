@@ -4,10 +4,16 @@ import java.io.*;
 import javax.media.opengl.*;
 import simplerjogl.*;
 
+/**
+ * An object to load models from files.
+ * 
+ * @author <a href="mailto:seth@battis.net">Seth Battis</a>
+ * 
+ */
 public abstract class Loader {
 
 	protected GL gl;
-
+	
 	public Loader(GL gl) {
 		this.gl = gl;
 	}
