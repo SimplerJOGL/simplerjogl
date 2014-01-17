@@ -102,7 +102,6 @@ public class Face extends SimplerJOGLObject {
 			if (wireframe) {
 				gl.glBegin(GL.GL_LINE_LOOP);
 			} else {
-				gl.glNormal3fv(surfaceNormal().getXYZf(), 0);
 				if (vertices.size() == 3) {
 					gl.glBegin(GL2.GL_TRIANGLES);
 				} else if (vertices.size() == 4) {
@@ -111,7 +110,9 @@ public class Face extends SimplerJOGLObject {
 					gl.glBegin(GL2.GL_POLYGON);
 				}
 			}
-
+			
+			gl.glNormal3fv(surfaceNormal().getXYZf(), 0);
+			
 			Iterator<Vertex> i = vertices.iterator();
 			while (i.hasNext()) {
 				Vertex v = i.next();
