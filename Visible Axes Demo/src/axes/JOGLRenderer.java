@@ -56,7 +56,7 @@ public class JOGLRenderer extends Renderer
 	public void display ()
 	{
 		/* set the location and focal point of our camera */
-		glu.gluLookAt (0, 0, 5, 0, 0, 0, 0, 1, 0);
+		glu.gluLookAt (5, 5, 5, 0, 0, 0, -1, 1, -1);
 		gl.glPushMatrix ();
 		{
 			/* rotate our teapot some (changing) number of degrees */
