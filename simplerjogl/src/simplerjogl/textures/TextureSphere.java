@@ -24,7 +24,7 @@ public class TextureSphere extends TextureModel
 		super.draw ();
 		TextureCoords tc = texture.getImageTexCoords ();
 		double textureWidth = tc.right () - tc.left ();
-		double textureHeight = tc.bottom () - tc.top ();
+		double textureHeight = tc.top () - tc.bottom ();
 		double theta1, theta2, theta3;
 		double ex, ey, ez, px, py, pz;
 		if (divisions < 4 || radius <= 0 || !textureLoaded ())
