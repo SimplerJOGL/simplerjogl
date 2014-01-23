@@ -227,7 +227,7 @@ public class Renderer extends SimplerJOGLObject implements GLEventListener, KeyL
 		xAxis = new Material (gl);
 		xAxis.setDiffuse (1, 0, 0, 1);
 		yAxis = new Material (gl);
-		yAxis.setDiffuse (1, 1, 0, 1);
+		yAxis.setDiffuse (0, 1, 0, 1);
 		zAxis = new Material (gl);
 		zAxis.setDiffuse (0, 0, 1, 1);
 		init ();
