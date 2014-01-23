@@ -44,13 +44,14 @@ public class ObjLoader extends Loader {
 		while ((line = reader.readLine()) != null) {
 			readerLineNumber++;
 			if (line.length() > 0) {
-				switch (line.charAt(0)) {
-				case '#': // comment
+				String[] token = line.split("\\s");
+				switch (token[0]) {
+				case "#": // comment
 					break;
-				case 'v': // vertex
+				case "v": // vertex
 					vertices.add(parseVertex(new Definition(line, 3, 4)));
 					break;
-				case 'f': // face
+				case "f": // face
 					faces.add(parseFace(gl, new Definition(line, 3), vertices));
 					break;
 				default:
