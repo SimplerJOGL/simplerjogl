@@ -15,7 +15,7 @@ import simplerjogl.loader.obj.*;
 public class JOGLRenderer extends Renderer {
 
 	/* a model that will be loaded from a Wavefront OBJ file */
-	private LoadedModel suzanne;
+	private LoadedModel objModel;
 
 	private int degreesOfRotation;
 	private Light basicLight;
@@ -27,7 +27,7 @@ public class JOGLRenderer extends Renderer {
 		 * either need to throw them ourselves or catch them.
 		 */
 		try {
-			suzanne = new ObjLoader(gl).load("model/suzanne.obj");
+			objModel = new ObjLoader(gl).load("model/head/head.OBJ");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -40,6 +40,6 @@ public class JOGLRenderer extends Renderer {
 	public void display() {
 		glu.gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 		gl.glRotatef(degreesOfRotation++, 0, 1, 0);
-		suzanne.draw();
+		objModel.draw();
 	}
 }
